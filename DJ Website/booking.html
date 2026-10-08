@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="NEED A DJ IN ORANGE COUNTY? THIS IS IT!">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orange County DJ for your event!</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+        <a href="index.html" class="logo-link"><img class="site-logo" src="dj_photos/logo.png"></a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#services">SERVICES</a></li>
+                <li><a href="booking.html" class="nav-book">BOOK ME</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+        <header class="booking-header">
+            <p class="booking-label">BOOKING INQUIRY</p>
+
+            <h1>LET'S PLAN <span>YOUR</span> EVENT!</h1>
+            <p class="booking-subtitle">Tell us about you and your event to create an unforgettable night!</p>
+        </header>
+
+        <main>
+            <form id="booking-form" method="POST" action="https://script.google.com/macros/s/AKfycbzlIM4_JYkRVV4C9kwSoCjo1SDWiACSpBueRBCjVrsh0zKw9FK9fqwHVt9vqkT1Lg4T/exec">
+                <fieldset class="personal-info">
+                    <legend>Your Information</legend>
+                       
+                        <div>
+                        <label for="full-name">Name:</label>
+                        <input type="text" id="full-name" name="customerName" required placeholder="e.g, John Smith">
+                        </div>
+
+                        <div>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        </div>
+
+                        <div>
+                        <label for="phone-number">Phone Number:</label>
+                        <input type="tel" id="phone-number" name="phone-number" required placeholder="(888)999-000"> 
+                        </div>
+                    
+                </fieldset>    
+                
+                <fieldset class="contact-info">    
+                    <legend>Contact Preferences</legend>
+                    <div class="contact-method">
+                    <label>Best way to contact you?</label>
+                        
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input required type="radio" id="contact-email" name="choice" value="email">
+                                <label for="contact-email">Email</label>
+                                </div>
+                            <div class="radio-option">
+                                <input type="radio" id="contact-phone-call" name="choice" value="phone-call">
+                                <label for="contact-phone-call">Phone Call</label>
+                                </div>
+                            <div class="radio-option">
+                                <input type="radio" id="contact-text" name="choice" value="text">
+                                <label for="contact-text">Text</label>
+                                </div>
+                        </div>
+                    </div>   
+                    
+                </fieldset>
+
+                <fieldset class="event-details">
+                <legend>Event Details</legend>
+                <div class="event-top-row">
+                    <div>    
+                        <label for="event-type">What kind of event is it?</label>
+                        <select required name="event-type" id="event-type">
+                        <option value="" selected disabled>Select an event type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="birthday">Birthday</option>
+                        <option value="quincenera">Quinceñera</option>
+                        <option value="school-dance">School Dance</option>
+                        <option value="prom">Prom</option>
+                        <option value="restaurant-bar">Restaurant / Bar</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="private">Private Event</option>
+                        <option value="other">Other</option>
+                    </select>
+                    </div>
+
+                    <div>
+                        <label for="event-date">Event Date</label>
+                        <input type="date" id="event-date" name="eventDate" required>
+                    </div>
+                    
+                    <div>
+                        <label for="city">Event City</label>
+                        <input type="text" id="city" name="city" placeholder="e.g., Anaheim, CA" autocomplete="address-level2" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Booking Information</legend>
+
+                    <div class="booking-info">
+                        <div>    
+                            <label for="hours-needed">Hours Needed</label>
+                            <input type="number" id="hours-needed" name="hoursNeeded" min="1" placeholder="Example: 4" required>
+                        </div>
+                        <div>        
+                            <label for="budget">Estimated Budget</label>
+                            <input type="number" id="budget" name="budget" min="0" placeholder="$500">
+                        </div>
+                        <div>
+                            <label for="referral-source">How did you hear about us?</label>
+                                <select id="referral-source" name="referralSource">
+                                    <option value="" selected disabled>Select one</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="tiktok">TikTok</option>
+                                    <option value="friend">Friend Referral</option>
+                                    <option value="website">Website</option>
+                                    <option value="other">Other</option>
+                                </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                        <div class="additional-notes">
+                            <label for="additional-notes">Is there anything else you would like the DJ to know about your event?
+                            </label>
+                            <textarea id="additional-notes" name="additionalNotes" rows="6" placeholder="Tell us anything important about your event, crowd, music preferences, setup, or schedule."></textarea>
+                        </div>    
+                    <button type="submit">
+                        <span class="button-text">Request a Quote</span>
+                        <span class="loader loader-hidden" id="form-loader"></span>
+                    </button>
+                    <p id="form-message"></p>
+                </fieldset>
+            </form>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
